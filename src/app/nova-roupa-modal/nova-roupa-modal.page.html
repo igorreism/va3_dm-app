@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nova Roupa</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="fechar()">
+        Fechar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form (ngSubmit)="adicionar()">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="roupa.nome" name="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descrição</ion-label>
+      <ion-input type="text" [(ngModel)]="roupa.descricao" name="descricao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Imagem</ion-label>
+      <ion-input type="file" name="imagem" (change)="fileChangeListener($event)"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block">Adicionar Roupa</ion-button>
+  </form>
+
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Roupas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h4 *ngIf="guardaroupa.length == 0">Nenhuma roupa na lista!</h4>
+  <ion-card *ngFor="let roupa of guardaroupa">
+    <img src="{{ roupa.imagem }}" />
+    <ion-card-header>
+      <ion-card-subtitle>{{ roupa.descricao }}</ion-card-subtitle>
+      <ion-card-title>{{ roupa.nome }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novaRoupa()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
